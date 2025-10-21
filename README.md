@@ -1,6 +1,4 @@
-Absolutely! Here’s a **more visually appealing README** for your HNG Backend Task 2, now with emojis to make it friendly and engaging:
 
----
 
 # 📝 HNG Backend Task 2
 
