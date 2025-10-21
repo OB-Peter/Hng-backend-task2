@@ -21,7 +21,7 @@ router.get("/filter-by-natural-language", filterByNaturalLanguage);
 router.post("/", createStringEntry);
 
 // 🔍 3️⃣ Get all strings with optional filters
-router.get("/", getAllStrings);
+router.get("", getAllStrings);
 
 // 🎯 4️⃣ Get specific string by value
 router.get("/:value", getStringByValue);

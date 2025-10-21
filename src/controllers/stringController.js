@@ -33,7 +33,7 @@ export const createStringEntry = async (req, res) => {
     const { value } = req.body;
 
     // Validate
-    if (value === undefined) {
+    if (value === undefined || value === null || value === "") {
       return res.status(422).json({ message: 'Missing "value" field' });
     }
     if (typeof value !== "string") {
@@ -186,7 +186,9 @@ export const filterByNaturalLanguage = async (req, res) => {
     }
 
     const results = await StringModel.find(filters);
-    return res.status(200).json({ data: results, count: results.length, interpreted_query: { original: query, parsed_filters: filters } });
+    return res.status(200).json({ data: results, count: results.length, interpreted_query: { original: query, parsed_filters: {word_count : filters["properties.word_count"], is_palindrome: filters["properties.is_palindrome"]
+      
+    } } });
   } catch (err) {
     return res.status(500).json({ message: "Internal Server Error" });
   }
