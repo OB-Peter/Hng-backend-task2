@@ -275,7 +275,7 @@ export const deleteStringByValue = async (req, res) => {
       return res.status(404).json({ message: "String does not exist in the system" });
     }
 
-    res.status(200).json({ message: "String deleted successfully", deleted: deletedString });
+    res.status(204).send();
 
   } catch (error) {
     res.status(500).json({ message: "Server Error", error: error.message });

@@ -1,5 +1,5 @@
 import express from "express";
-import { createStringEntry, getStringByValue, getAllStrings, filterByNaturalLanguage } from "../controllers/stringController.js";
+import { createStringEntry, getStringByValue, getAllStrings, filterByNaturalLanguage, deleteStringByValue } from "../controllers/stringController.js";
 
 const router = express.Router();
 
@@ -12,5 +12,5 @@ router.get("/", getAllStrings); // Get all strings, optional filters
 
 // Dynamic route last
 router.get("/:value", getStringByValue);
-
-export default router;
+router.delete("/:value", deleteStringByValue); 
+export default router
